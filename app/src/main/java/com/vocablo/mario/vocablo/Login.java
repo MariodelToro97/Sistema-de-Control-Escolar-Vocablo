@@ -11,7 +11,7 @@ import android.widget.Button;
 
 public class Login extends AppCompatActivity {
 
-
+    //Declaración de las variables de tipo botón que se usan
     Button Siguiente;
     Button IniciarAdmin;
 
@@ -19,52 +19,25 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        //asignación de los botones a las variables creadas
         Siguiente = (Button)findViewById(R.id.btnLLenarInfo);
         IniciarAdmin = (Button)findViewById(R.id.btnAdmin);
 
-        getSupportActionBar().hide();
-
-        AlertDialog.Builder alert= new AlertDialog.Builder(this);
-        alert.setMessage("Ejemplo de alerta");
-        alert.setCancelable(false);
-        alert.setTitle("Titulo del mensaje");
-        alert.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                int i = 0;
-                int j = i+2;
-
-            }
-        });
-
-        alert.setPositiveButton("Procesar datos", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                int j= 8;
-                 int y = 8+j-1;
-
-            }
-        });
-
-
-        alert.show();
-
+        getSupportActionBar().hide(); //Oculta la barra superior de la pantalla
 
         Siguiente.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                //Intent i = new Intent(Login.this, ExamenDiagnostico.class);
-                startActivity(new Intent(Login.this,ExamenDiagnostico.class));
-                //finish();
+            public void onClick(View v) { //Entra cuando se presiona la tecla de Realizar exmaen diagnóstico
+                startActivity(new Intent(Login.this,ExamenDiagnostico.class)); //Encargado de lanzar la otra actividad desde aqui
+                finish(); //Cierra la activity completamente
             }
         });
 
         IniciarAdmin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                //Intent i = new Intent(Login.this, ExamenDiagnostico.class);
-                startActivity(new Intent(Login.this,InterfazAdmin.class));
-                finish();
+            public void onClick(View v) { //Entra cuando se presiona la tecla de iniciar sesión
+                startActivity(new Intent(Login.this,InterfazAdmin.class)); //Encargado de lanzar la otra actividad desde aqui
+                finish(); //Cierra la activity completamente
             }
         });
 

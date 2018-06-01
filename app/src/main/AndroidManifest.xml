@@ -12,25 +12,39 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Login">
+        <activity android:name=".Login"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ExamenDiagnostico" />
-        <activity android:name=".RealizacionDiag" />
-        <activity android:name=".RegistrarAlumno" />
-        <activity android:name=".RegistrarProfesor" />
-        <activity android:name=".RegistrarAdministrativo" />
-        <activity android:name=".InterfazAdmin" />
-        <activity android:name=".InterfazAlumno" />
-        <activity android:name=".InterfazMaestro" />
-        <activity android:name=".InterfazPago" />
-        <activity android:name=".InterfazProgresoAlumno" />
-        <activity android:name=".InterfazAgendarCita" />
-        <activity android:name=".InterfazCitasAgendadas"></activity>
+        <activity android:name=".ExamenDiagnostico"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".RealizacionDiag"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".RegistrarAlumno"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".RegistrarProfesor"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".RegistrarAdministrativo"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".InterfazAdmin"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".InterfazAlumno"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".InterfazMaestro"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".InterfazPago"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".InterfazProgresoAlumno"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".InterfazAgendarCita"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".InterfazCitasAgendadas"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

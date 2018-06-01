@@ -9,22 +9,23 @@
 
     <ImageView
         android:id="@+id/imageView10"
-        android:layout_width="370dp"
+        android:layout_width="0dp"
         android:layout_height="66dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/vocablo" />
+        app:srcCompat="@drawable/ic_launcher_vocablo" />
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="154dp"
+        android:layout_width="221dp"
         android:layout_height="50dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
@@ -34,39 +35,374 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="370dp"
-        android:layout_height="431dp"
+        android:layout_width="0dp"
+        android:layout_height="419dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.583">
+        app:layout_constraintTop_toBottomOf="@+id/imageView10"
+        app:layout_constraintVertical_bias="0.0">
 
-        <LinearLayout
+        <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='1. ¿Cuál es el pasado del verbo "BE?'
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp"
+                tools:layout_editor_absoluteX="135dp"
+                tools:layout_editor_absoluteY="99dp" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="367dp"
+                tools:layout_editor_absoluteY="232dp">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Been"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Played"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Was / Were"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text='2. ¿Cuál es el pasado del verbo "FLY"?'
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="135dp"
+                tools:layout_editor_absoluteY="99dp" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="367dp"
+                tools:layout_editor_absoluteY="232dp">
+
+                <RadioButton
+                    android:id="@+id/radioButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Flew"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Burst"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Frozen"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text='3. ¿Cuál es el significado de "HAVE"?'
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="135dp"
+                tools:layout_editor_absoluteY="99dp" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="367dp"
+                tools:layout_editor_absoluteY="232dp">
+
+                <RadioButton
+                    android:id="@+id/radioButton7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jugar"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tener"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Despertar"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text='4. ¿Cuál es el significado de "DRIVE"?'
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="135dp"
+                tools:layout_editor_absoluteY="99dp" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="367dp"
+                tools:layout_editor_absoluteY="232dp">
+
+                <RadioButton
+                    android:id="@+id/radioButton10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Conducir"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tocar"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Volar"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text='5. ¿Cuál es el Past Participle de "DO"?'
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="135dp"
+                tools:layout_editor_absoluteY="99dp" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="367dp"
+                tools:layout_editor_absoluteY="232dp">
+
+                <RadioButton
+                    android:id="@+id/radioButton13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Struck"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gone"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Done"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text='6. ¿Cuál es el Past Participle de "LIE"?'
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="135dp"
+                tools:layout_editor_absoluteY="99dp" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="367dp"
+                tools:layout_editor_absoluteY="232dp">
+
+                <RadioButton
+                    android:id="@+id/radioButton16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lain"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lit"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lend"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text='7. ¿Cuál es el pasado de "BEAR"?'
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="135dp"
+                tools:layout_editor_absoluteY="99dp" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="367dp"
+                tools:layout_editor_absoluteY="232dp">
+
+                <RadioButton
+                    android:id="@+id/radioButton20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Been"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Beat"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bore"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text='8. ¿Cuál es el pasado de "COST"?'
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="135dp"
+                tools:layout_editor_absoluteY="99dp" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="367dp"
+                tools:layout_editor_absoluteY="232dp">
+
+                <RadioButton
+                    android:id="@+id/radioButton23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cut"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cost"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+
+                <RadioButton
+                    android:id="@+id/radioButton25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Came"
+                    tools:layout_editor_absoluteX="194dp"
+                    tools:layout_editor_absoluteY="176dp" />
+            </RadioGroup>
+        </android.support.v7.widget.LinearLayoutCompat>
     </ScrollView>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="238dp"
-        android:layout_height="22dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text='1. ¿Cuál es el pasado del verbo "BE"?'
-        app:layout_constraintEnd_toEndOf="@+id/scrollView2"
-        app:layout_constraintHorizontal_bias="0.594"
-        app:layout_constraintStart_toStartOf="@+id/scrollView2"
-        tools:layout_editor_absoluteY="108dp" />
 
 </android.support.constraint.ConstraintLayout>

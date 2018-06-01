@@ -8,6 +8,7 @@ import android.widget.Button;
 
 public class InterfazAlumno extends AppCompatActivity {
 
+    //Asignación de las variables de los tipos botones
     Button AgendarCita;
     Button VerProgreso;
     Button RealizarPago;
@@ -18,8 +19,9 @@ public class InterfazAlumno extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interfaz_alumno);
 
-        getSupportActionBar().hide();
+        getSupportActionBar().hide(); //Oculta la barra superior de la pantalla
 
+        //Asignación de las variables con los botones
         AgendarCita = (Button)findViewById(R.id.btnAgendarCita);
         VerProgreso=(Button)findViewById(R.id.btnVerProgreso);
         RealizarPago=(Button)findViewById(R.id.btnRealizarPago);
@@ -27,40 +29,33 @@ public class InterfazAlumno extends AppCompatActivity {
 
         AgendarCita.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                //Intent i = new Intent(Login.this, ExamenDiagnostico.class);
-                startActivity(new Intent(InterfazAlumno.this,InterfazAgendarCita.class));
-                //finish();
+            public void onClick(View v) { //Entra cuando se presiona el botón de agendar cita
+                startActivity(new Intent(InterfazAlumno.this,InterfazAgendarCita.class)); //Encargado de lanzar la otra actividad desde aqui
+                finish(); //Cierra la activity completamente
             }
         });
-
 
         VerProgreso.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                //Intent i = new Intent(Login.this, ExamenDiagnostico.class);
-                startActivity(new Intent(InterfazAlumno.this,InterfazProgresoAlumno.class));
-                //finish();
+            public void onClick(View v) { //Entra si se presiona el botón de ver progreso
+                startActivity(new Intent(InterfazAlumno.this,InterfazProgresoAlumno.class)); //Encargado de lanzar la otra actividad desde aqui
+                finish();//Cierra la activity completamente
             }
         });
-
 
         RealizarPago.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                //Intent i = new Intent(Login.this, ExamenDiagnostico.class);
-                startActivity(new Intent(InterfazAlumno.this,InterfazPago.class));
-                //finish();
+            public void onClick(View v) { //Entra si se presiona el botón de realizar pago
+                startActivity(new Intent(InterfazAlumno.this,InterfazPago.class)); //Encargado de lanzar la otra actividad desde aqui
+                finish();//Cierra la activity completamente
             }
         });
 
-
         CerrarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                //Intent i = new Intent(Login.this, ExamenDiagnostico.class);
-                startActivity(new Intent(InterfazAlumno.this,Login.class));
-                //finish();
+            public void onClick(View v) { //Entra si se presiona el botón de cerrar sesión
+                startActivity(new Intent(InterfazAlumno.this,Login.class)); //Encargado de lanzar la otra actividad desde aqui
+                finish(); //Cierra la activity completamente
             }
         });
 

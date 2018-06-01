@@ -10,6 +10,6 @@ public class InterfazMaestro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interfaz_maestro);
 
-        getSupportActionBar().hide();
+        getSupportActionBar().hide(); //Oculta la barra superior de la pantalla
     }
 }

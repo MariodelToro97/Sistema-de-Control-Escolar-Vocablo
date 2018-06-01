@@ -5,12 +5,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class BaseVocablo extends SQLiteOpenHelper {
+    //declaración del método base
     public BaseVocablo(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, "VOCABLO", factory, 1);
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db) {
+    public void onCreate(SQLiteDatabase db) { //Creación de toda la base de datos en SQLite
         db.execSQL("CREATE TABLE VOCABLO (" +
                 "claveInstituto INTEGER Constraint PK_claveInstitucionVocablo Primary Key, " +
                 "domicilio text not null," +
@@ -124,6 +125,6 @@ public class BaseVocablo extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+    //Método que se ejecuta si se actualiza la base de datos en una nueva versión.
     }
 }

@@ -8,7 +8,8 @@ import android.widget.Button;
 
 public class InterfazPago extends AppCompatActivity {
 
-    Button InterfazAlumno;
+    Button InterfazAlumno; //Declaración del botón de Regresar
+    Button Pago; //Declaración del botón de pago
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,13 +18,24 @@ public class InterfazPago extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
+        //Asignación de los botones a las variables
         InterfazAlumno = (Button)findViewById(R.id.btnMenuAlumno);
+        Pago = (Button) findViewById(R.id.btnMenuAlumno3);
+
+        //Método que realiza al presionar sobre el botón de Regresar
         InterfazAlumno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent i = new Intent(Login.this, ExamenDiagnostico.class);
-                startActivity(new Intent(InterfazPago.this,InterfazAlumno.class));
-                finish();
+                startActivity(new Intent(InterfazPago.this,InterfazAlumno.class)); //Despliegue de la pantalla a mostrar
+                finish(); //Cierra la interfaz completamente
+            }
+        });
+        //Método que realiza al presionar sobre el botón de pago
+        Pago.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(InterfazPago.this,InterfazAlumno.class)); //Despliegue de la pantalla a mostrar
+                finish(); //Cierra la interfaz completamente
             }
         });
     }
