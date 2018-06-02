@@ -39,7 +39,7 @@ public class BaseVocablo extends SQLiteOpenHelper {
                 "Constraint FK_membresiaAlumnoAlumnoVocablo Foreign Key (MembresiaAlumno) References Alumno (MembresiaAlumno))");
 
         db.execSQL("Create table Maestro( " +
-                "NumeroCuenta TEXT not null,"+
+                "NumeroCuenta TEXT not null Constraint PK_numeroCuentaMaestro Primary Key,"+
                 "ClaveVocablo INTEGER not null,"+
                 "RFC TEXT not null Constraint UK_RFCMaestro unique Constraint CK_rfcMaestro Check (RFC like('[A-Z][A-Z][A-Z][A-Z]-[0-9][0-9][0-9][0-9][0-9][0-9]')),"+
                 "Nombre TEXT not null, "+
@@ -54,7 +54,6 @@ public class BaseVocablo extends SQLiteOpenHelper {
                 "Genero TEXT not null Constraint CK_generoMaestro check (Genero in ('m','f')), "+
                 "nivelEstudio TEXT not null,"+
                 "Estado INTEGER Constraint DF_estadoMaestro Default '0' Constraint CK_estadoMaestro Check (Estado in ('0', '1')),"+
-                "Constraint PK_numeroCuentaMaestro Primary Key (NumeroCuenta), " +
                 "Constraint FK_claveVocabloMaestro Foreign Key (ClaveVocablo) References Vocablo (claveInstituto)) ");
 
         db.execSQL("Create table Diagnostico (" +
