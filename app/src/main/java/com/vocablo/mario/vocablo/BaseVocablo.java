@@ -18,7 +18,7 @@ public class BaseVocablo extends SQLiteOpenHelper {
                 "Telefono INTEGER Constraint DF_telefonoVocablo Default '00-000-00-00000' Constraint UK_telefonoVocablo Unique)");
 
         db.execSQL("Create table Alumno(" +
-                "MembresiaAlumno TEXT not null, " +
+                "MembresiaAlumno TEXT not null Constraint PK_numMembreAlumno Primary Key, " +
                 "Nombre TEXT not null," +
                 "apellidoPaterno TEXT not null, " +
                 "apellidoMaterno TEXT not null," +
@@ -29,8 +29,7 @@ public class BaseVocablo extends SQLiteOpenHelper {
                 "FechaNac TEXT not null," +
                 "FechaIngreso TEXT," +
                 "Genero TEXT not null Constraint CK_generoAlumno Check (Genero in ('m','f')), " +
-                "NivelIngles TEXT not null," +
-                "Constraint PK_numMembreAlumno Primary Key (MembresiaAlumno))");
+                "NivelIngles TEXT not null)");
 
         db.execSQL("Create Table alumnoVocablo (" +
                 "ClaveVocablo INTEGER not null," +
