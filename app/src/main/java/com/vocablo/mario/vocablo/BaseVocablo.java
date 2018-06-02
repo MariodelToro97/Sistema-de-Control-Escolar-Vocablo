@@ -13,7 +13,7 @@ public class BaseVocablo extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) { //Creación de toda la base de datos en SQLite
         db.execSQL("CREATE TABLE VOCABLO (" +
-                "claveInstituto INTEGER Constraint PK_claveInstitucionVocablo Primary Key, " +
+                "claveInstituto INTEGER Constraint PK_claveInstitucionVocablo Primary Key Autoincrement, " +
                 "domicilio text not null," +
                 "Telefono INTEGER Constraint DF_telefonoVocablo Default '00-000-00-00000' Constraint UK_telefonoVocablo Unique)");
 
@@ -59,7 +59,7 @@ public class BaseVocablo extends SQLiteOpenHelper {
                 "Constraint FK_claveVocabloMaestro Foreign Key (ClaveVocablo) References Vocablo (claveInstituto)) ");
 
         db.execSQL("Create table Diagnostico (" +
-                "Clave INTEGER not null," +
+                "Clave INTEGER not null Constraint PK_ClaveDiagnostico Primary Key Autoincrement," +
                 "claveVocablo INTEGER not null," +
                 "Nombre TEXT not null," +
                 "apellidoPaterno TEXT not null," +
@@ -68,44 +68,40 @@ public class BaseVocablo extends SQLiteOpenHelper {
                 "Correo TEXT not null Constraint UK_correoDiagnostico Unique," +
                 "NivelAlcanzado TEXT not null," +
                 "FechaRealizacion TEXT," +
-                "Constraint PK_claveDiagnostico Primary Key (Clave)," +
                 "Constraint FK_claveVocabloDiagnostico Foreign Key (claveVocablo) References Vocablo (claveInstituto))");
 
         db.execSQL("Create Table Critica (" +
-                "claveCritica INTEGER not null Constraint PK_claveCritica Primary Key," +
+                "claveCritica INTEGER not null Constraint PK_claveCritica Primary Key Autoincrement," +
                 "claveAlumno TEXT not null," +
                 "Fecha TEXT not null," +
                 "Critica TEXT not null," +
                 "Constraint FK_membresiaCritica Foreign Key (claveAlumno) References Alumno (MembresiaAlumno))");
 
         db.execSQL("Create table Pagos (" +
-                "clavePago INTEGER not null," +
+                "clavePago INTEGER not null Constraint PK_clavePagos Primary Key Autoincrement," +
                 "claveAlumno TEXT not null," +
                 "Fecha TEXT not null," +
                 "Monto INTEGER  not null Constraint CK_montoPagos Check (Monto >= 0)," +
                 "FormaPago INTEGER not null Constraint CK_formaPagoPagos Check (FormaPago in ('0','1'))," +
                 "Concepto TEXT not null," +
-                "Constraint PK_clavePagos Primary Key (clavePago)," +
                 "Constraint FK_claveAlumnoPagos Foreign Key (claveAlumno) References Alumno (MembresiaAlumno))");
 
         db.execSQL("Create table Cita(" +
-                "claveCita INTEGER not null," +
+                "claveCita INTEGER not null Constraint PK_claveCita Primary Key Autoincrement," +
                 "membresiaDocente TEXT not null," +
                 "membresiaAlumno TEXT not null," +
                 "fechaHora TEXT not null," +
                 "Asistencia INTEGER not null Constraint DF_estadoAsistencia Default '1' Constraint CK_estadoAsistencia Check (Asistencia in('1', '2', '3', '4'))," +
-                "Constraint PK_claveCita Primary Key (claveCita)," +
                 "Constraint FK_membresiaDocenteCita Foreign Key (membresiaDocente) References Maestro (NumeroCuenta)," +
                 "Constraint FK_membresiaAlumnoCita Foreign Key (membresiaAlumno) References Alumno (MembresiaAlumno))");
 
         db.execSQL("Create table Evaluacion(" +
-                "claveEvaluacion INTEGER not null," +
+                "claveEvaluacion INTEGER not null Constraint PK_claveEvaluacion Primary Key Autoincrement," +
                 "claveAlumno TEXT not null," +
                 "Nivel TEXT not null," +
                 "Fecha TEXT not null," +
                 "Evaluacion INTEGER not null Constraint CK_calificacionEvaluacion Check (Evaluacion between 0 and 100)," +
                 "claveDocente TEXT not null," +
-                "Constraint PK_claveEvaluacion Primary Key (claveEvaluacion)," +
                 "Constraint FK_membresiaAlumnoEvaluacion Foreign Key (claveAlumno) References Alumno (MembresiaAlumno)," +
                 "Constraint FK_membresiaDoceneteEvaluacion Foreign Key (claveDocente) References Maestro (NumeroCuenta))");
 
@@ -126,5 +122,15 @@ public class BaseVocablo extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     //Método que se ejecuta si se actualiza la base de datos en una nueva versión.
+    }
+
+    public void abrirBD(){
+        //Método que permite abrir la Base de Datos para Insertar datos
+        this.getWritableDatabase();
+    }
+
+    public void cerrarBD(){
+        //Método que permite cerrar la Base de Datos para que no se use más
+        this.close();
     }
 }
