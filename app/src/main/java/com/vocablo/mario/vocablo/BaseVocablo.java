@@ -111,6 +111,7 @@ public class BaseVocablo extends SQLiteOpenHelper {
                 "apellidoPaterno TEXT not null," +
                 "apellidoMaterno TEXT not null," +
                 "FechaIngreso TEXT," +
+                "FechaNacimiento TEXT," +
                 "Telefono TEXT Constraint DF_telefonoAdministrativo default '00-000-00-00000'," +
                 "Correo TEXT Constraint UK_correoAdministrativo Unique not null," +
                 "Estado INTEGER not null Constraint DF_estadoAdministrativo Default '0' Constraint CK_estadoAdministrativo Check (Estado in ('0', '1'))," +
@@ -130,5 +131,10 @@ public class BaseVocablo extends SQLiteOpenHelper {
     public void cerrarBD(){
         //Método que permite cerrar la Base de Datos para que no se use más
         this.close();
+    }
+
+    //Método que permite insertar registros en la tabla alumno
+    public void insertarAlumno() {
+
     }
 }

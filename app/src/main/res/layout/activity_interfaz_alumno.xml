@@ -7,12 +7,9 @@
     tools:context=".InterfazAlumno">
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imageView13"
         android:layout_width="0dp"
         android:layout_height="66dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,6 +18,32 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_launcher_vocablo" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13">
+
+        <TextView
+            android:layout_width="263dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Interfaz Alumno"
+            android:textColor="@android:color/white"
+            android:textSize="25sp"
+            tools:layout_editor_absoluteX="113dp"
+            tools:layout_editor_absoluteY="394dp" />
+    </LinearLayout>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="0dp"
@@ -33,7 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <Button
             android:id="@+id/btnAgendarCita"

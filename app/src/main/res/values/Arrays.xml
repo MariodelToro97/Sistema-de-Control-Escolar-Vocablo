@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="HorariosSemana">
+        <item>7:00 am</item>
         <item>8:00 am</item>
         <item>9:00 am</item>
         <item>10:00 am</item>
@@ -13,6 +14,51 @@
         <item>6:00 pm</item>
         <item>7:00 pm</item>
         <item>8:00 pm</item>
+        <item>9:00 pm</item>
     </string-array>
 
+    <string-array name="HorarioSabado">
+        <item>8:00 am</item>
+        <item>9:00 am</item>
+        <item>10:00 am</item>
+        <item>11:00 am</item>
+        <item>12:00 pm</item>
+        <item>1:00 pm</item>
+        <item>2:00 pm</item>
+    </string-array>
+
+    <string-array name="NivelGeneral">
+        <item>Principiante</item>
+        <item>Intermedia</item>
+        <item>Intermedia Plus</item>
+        <item>Avanzado</item>
+    </string-array>
+
+    <string-array name="Principiante">
+        <item>Principiante 1</item>
+        <item>Principiante 2</item>
+        <item>Principiante 3</item>
+        <item>Principiante 4</item>
+    </string-array>
+
+    <string-array name="Intermedia">
+        <item>Intermedia 1</item>
+        <item>Intermedia 2</item>
+    </string-array>
+
+    <string-array name="IntermediaPlus">
+    <item>Intermedia Plus 1</item>
+    <item>Intermedia Plus 2</item>
+    </string-array>
+
+    <string-array name="Avanzado">
+        <item>Avanzado 1</item>
+        <item>Avanzado 2</item>
+    </string-array>
+
+    <string-array name="Estudios">
+        <item>Licenciatura</item>
+        <item>Maestría</item>
+        <item>Doctorado</item>
+    </string-array>
 </resources>

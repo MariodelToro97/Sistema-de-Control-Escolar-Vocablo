@@ -22,6 +22,28 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_launcher_vocablo" />
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_margin="0dp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView12">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Registrar Alumno"
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
+    </LinearLayout>
+
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
@@ -52,19 +74,18 @@
 
     <ScrollView
         android:id="@+id/scrollView3"
-        android:layout_width="375dp"
-        android:layout_height="432dp"
+        android:layout_width="367dp"
+        android:layout_height="388dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView12"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.0">
-
 
         <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -104,6 +125,18 @@
                 android:gravity="center"
                 android:hint="Apellido Materno"
                 android:inputType="textPersonName"
+                android:layout_marginBottom="5dp"
+                tools:layout_editor_absoluteX="85dp"
+                tools:layout_editor_absoluteY="124dp" />
+
+            <EditText
+                android:id="@+id/editText15"
+                android:layout_width="271dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Domicilio"
+                android:inputType="number"
                 android:layout_marginBottom="5dp"
                 tools:layout_editor_absoluteX="85dp"
                 tools:layout_editor_absoluteY="124dp" />
@@ -149,6 +182,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Género"
+                android:layout_marginTop="5dp"
                 android:textSize="18sp"
                 android:layout_marginBottom="5dp"
                 tools:layout_editor_absoluteX="180dp"
@@ -173,6 +207,46 @@
                     android:text="Femenino" />
             </RadioGroup>
 
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nivel"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp"
+                android:layout_marginBottom="5dp"
+                tools:layout_editor_absoluteX="180dp"
+                tools:layout_editor_absoluteY="360dp" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="271dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                app:layout_constraintBottom_toTopOf="@+id/btnMenuAlumno"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText35"
+                app:layout_constraintVertical_bias="0.154" />
+
+            <Spinner
+                android:id="@+id/spinner1"
+                android:layout_width="271dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                app:layout_constraintBottom_toTopOf="@+id/btnMenuAlumno"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText35"
+                app:layout_constraintVertical_bias="0.154" />
         </android.support.v7.widget.LinearLayoutCompat>
     </ScrollView>
 

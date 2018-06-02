@@ -27,9 +27,8 @@ public class InterfazAgendarCita extends AppCompatActivity {
         Cita = (Button)findViewById(R.id.btnMenuAlumno); //Asignación del botón de Agendar Cita
 
         Horarios = (Spinner) findViewById(R.id.spinner); //Asignación del Spinner a la variable
-        ArrayAdapter spinner_Adapter = ArrayAdapter.createFromResource(this, R.array.HorariosSemana, android.R.layout.activity_list_item); //Creación del objeto array con los horarios
+        ArrayAdapter <CharSequence> spinner_Adapter = ArrayAdapter.createFromResource(this, R.array.HorariosSemana, android.R.layout.simple_spinner_item); //Creación del objeto array con los horarios
 
-        spinner_Adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line); //Asignación al objeto creado del array
         Horarios.setAdapter(spinner_Adapter); //Asignación de los horarios al spinner
 
         final AlertDialog.Builder alert= new AlertDialog.Builder(this); //Declaración del tipo de objeto de AlertDialog para mostrar
