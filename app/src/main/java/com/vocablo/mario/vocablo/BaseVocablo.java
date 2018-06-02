@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class BaseVocablo extends SQLiteOpenHelper {
     //declaración del método base
-    public BaseVocablo(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    BaseVocablo(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, "VOCABLO", factory, 1);
     }
 
