@@ -52,7 +52,6 @@ public class RegistrarAlumno extends AppCompatActivity {
                 } else if (NivelG.getSelectedItem().toString().equalsIgnoreCase("Intermedio Plus")) {
                     NivelE.setAdapter(nivelA); //Asignación de los horarios al spinner
                 }
-
             }
 
             @Override

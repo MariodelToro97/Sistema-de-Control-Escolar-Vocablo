@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 import android.view.WindowManager;
 
 public class Splash extends Activity {
@@ -27,5 +28,10 @@ public class Splash extends Activity {
         }, DURACION_SPLASH);
 
         BaseVocablo db = new BaseVocablo(this, null, null, 1);
+
+        //código para ocultar la barra de navegación del celular
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
     }
 }

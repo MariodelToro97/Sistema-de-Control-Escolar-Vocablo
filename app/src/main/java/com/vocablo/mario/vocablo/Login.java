@@ -41,10 +41,9 @@ public class Login extends AppCompatActivity {
             }
         });
 
-
-
-
+        //código para ocultar la barra de navegación del celular
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
     }
-
-
 }
