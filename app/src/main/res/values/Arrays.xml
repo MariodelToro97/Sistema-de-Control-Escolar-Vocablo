@@ -29,8 +29,8 @@
 
     <string-array name="NivelGeneral">
         <item>Principiante</item>
-        <item>Intermedia</item>
-        <item>Intermedia Plus</item>
+        <item>Intermedio</item>
+        <item>Intermedio Plus</item>
         <item>Avanzado</item>
     </string-array>
 

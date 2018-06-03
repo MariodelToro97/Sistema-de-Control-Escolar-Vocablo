@@ -219,7 +219,7 @@
                 tools:layout_editor_absoluteY="360dp" />
 
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/nivel"
                 android:layout_width="271dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -227,6 +227,8 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
+                android:spinnerMode="dialog"
+                android:textAlignment="center"
                 app:layout_constraintBottom_toTopOf="@+id/btnMenuAlumno"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -234,7 +236,7 @@
                 app:layout_constraintVertical_bias="0.154" />
 
             <Spinner
-                android:id="@+id/spinner1"
+                android:id="@+id/nivel2"
                 android:layout_width="271dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -242,6 +244,8 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
+                android:spinnerMode="dialog"
+                android:textAlignment="center"
                 app:layout_constraintBottom_toTopOf="@+id/btnMenuAlumno"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
