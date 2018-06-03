@@ -49,7 +49,7 @@ public class RegistrarAlumno extends AppCompatActivity {
                     NivelE.setAdapter(nivelI); //Asignación de los horarios al spinner
                 } else if (NivelG.getSelectedItem().toString().equalsIgnoreCase("Intermedio Plus")) {
                     NivelE.setAdapter(nivelIP); //Asignación de los horarios al spinner
-                } else if (NivelG.getSelectedItem().toString().equalsIgnoreCase("Intermedio Plus")) {
+                } else if (NivelG.getSelectedItem().toString().equalsIgnoreCase("Avanzado")) {
                     NivelE.setAdapter(nivelA); //Asignación de los horarios al spinner
                 }
             }
