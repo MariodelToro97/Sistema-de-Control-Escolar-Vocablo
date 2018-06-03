@@ -61,4 +61,10 @@
         <item>Maestría</item>
         <item>Doctorado</item>
     </string-array>
+
+    <string-array name="InicioSesion">
+        <item>Estudiante</item>
+        <item>Profesor</item>
+        <item>Administrador</item>
+    </string-array>
 </resources>

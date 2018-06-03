@@ -7,13 +7,16 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 
 public class Login extends AppCompatActivity {
 
     //Declaración de las variables de tipo botón que se usan
     Button Siguiente;
     Button IniciarAdmin;
+    Spinner Usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,11 @@ public class Login extends AppCompatActivity {
         IniciarAdmin = (Button)findViewById(R.id.btnAdmin);
 
         getSupportActionBar().hide(); //Oculta la barra superior de la pantalla
+
+        Usuario = (Spinner) findViewById(R.id.spinner2); //Asignación del Spinner a la variable
+        ArrayAdapter<CharSequence> spinner_Adapter = ArrayAdapter.createFromResource(this, R.array.InicioSesion, android.R.layout.simple_spinner_item); //Creación del objeto array con los horarios
+
+        Usuario.setAdapter(spinner_Adapter); //Asignación de los horarios al spinner
 
         Siguiente.setOnClickListener(new View.OnClickListener() {
             @Override
