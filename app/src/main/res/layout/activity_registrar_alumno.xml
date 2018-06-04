@@ -208,6 +208,34 @@
             </RadioGroup>
 
             <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sucursal Vocablo"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp"
+                android:layout_marginBottom="5dp"
+                tools:layout_editor_absoluteX="180dp"
+                tools:layout_editor_absoluteY="360dp" />
+
+            <Spinner
+                android:id="@+id/Vocablo"
+                android:layout_width="271dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:spinnerMode="dialog"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/btnMenuAlumno"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText35"
+                app:layout_constraintVertical_bias="0.154" />
+
+            <TextView
                 android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
