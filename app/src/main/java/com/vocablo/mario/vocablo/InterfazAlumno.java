@@ -14,6 +14,7 @@ public class InterfazAlumno extends AppCompatActivity {
     Button VerProgreso;
     Button RealizarPago;
     Button CerrarSesion;
+    Button Critica;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +28,20 @@ public class InterfazAlumno extends AppCompatActivity {
         VerProgreso=(Button)findViewById(R.id.btnVerProgreso);
         RealizarPago=(Button)findViewById(R.id.btnRealizarPago);
         CerrarSesion=(Button)findViewById(R.id.btnLogin);
+        Critica = (Button)findViewById(R.id.btnAgendarCita2);
 
         AgendarCita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { //Entra cuando se presiona el botón de agendar cita
                 startActivity(new Intent(InterfazAlumno.this,InterfazAgendarCita.class)); //Encargado de lanzar la otra actividad desde aqui
+                finish(); //Cierra la activity completamente
+            }
+        });
+
+        Critica.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(InterfazAlumno.this,Critica.class)); //Encargado de lanzar la otra actividad desde aqui
                 finish(); //Cierra la activity completamente
             }
         });

@@ -1,6 +1,8 @@
 package com.vocablo.mario.vocablo;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -55,6 +57,7 @@ public class RegistrarAlumno extends AppCompatActivity {
         final ArrayAdapter <CharSequence> nivelI = ArrayAdapter.createFromResource(this, R.array.Intermedia, android.R.layout.simple_spinner_item); //Creación del objeto array con los respectivos subniveles
         final ArrayAdapter <CharSequence> nivelIP = ArrayAdapter.createFromResource(this, R.array.IntermediaPlus, android.R.layout.simple_spinner_item); //Creación del objeto array con los respectivos subniveles
         final ArrayAdapter <CharSequence> nivelA = ArrayAdapter.createFromResource(this, R.array.Avanzado, android.R.layout.simple_spinner_item); //Creación del objeto array con los respectivos subniveles
+        final AlertDialog.Builder alert= new AlertDialog.Builder(this); //Declaración del tipo de objeto de AlertDialog para mostrar
 
         NivelG.setAdapter(spinner_Adapter); //Asignación de los horarios al spinner
 
@@ -80,6 +83,19 @@ public class RegistrarAlumno extends AppCompatActivity {
 
                 int membresia = (int) (Math.random() * 999999) + 1; //Generación del número de la membresía
                 int password = (int) (Math.random() * 999) + 1; //Generación de la contraseña
+
+                alert.setMessage("Datos ingresados de forma correcta:\nMembresía: " + membresia + "\nPassword: " + password); //Asignación de lo que se va a desplegar en el mensaje central del AlertDialog
+                alert.setCancelable(false);
+                alert.setTitle("Estudiante Ingresado"); //asignación del titulo del AlertDialog
+
+                alert.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {//Entra cuando se presiona la tecla de Aceptar en el AlertDialog
+                        startActivity(new Intent(RegistrarAlumno.this,InterfazAlumno.class)); //Encargado de lanzar la otra actividad desde aqui
+                        finish(); //Cierra la activity completamente
+                    }
+                });
+                alert.show(); //Muestra el AlertDialog
 
                 //BD.insertarAlumno();
             }

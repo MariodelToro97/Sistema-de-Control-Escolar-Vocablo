@@ -6,24 +6,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class InterfazMaestro extends AppCompatActivity {
+public class Critica extends AppCompatActivity {
 
-    //Declaración de las variables de tipo botón que se usan
-    Button Cerrar;
+    //Asignación de las variables de los tipos botones
+    Button Regresar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_interfaz_maestro);
+        setContentView(R.layout.activity_critica);
 
         getSupportActionBar().hide(); //Oculta la barra superior de la pantalla
 
-        //asignación de los botones a las variables creadas
-        Cerrar = (Button)findViewById(R.id.btnCerrarSesion);
+        Regresar = (Button) findViewById(R.id.button3);
 
-        Cerrar.setOnClickListener(new View.OnClickListener() {
+        Regresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(InterfazMaestro.this, Login.class)); //Encargado de lanzar la otra actividad desde aqui
+                startActivity(new Intent(Critica.this,InterfazAlumno.class)); //Encargado de lanzar la otra actividad desde aqui
                 finish(); //Cierra la activity completamente
             }
         });
