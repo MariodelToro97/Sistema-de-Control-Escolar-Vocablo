@@ -69,8 +69,11 @@ public class InterfazAlumno extends AppCompatActivity {
                 finish(); //Cierra la activity completamente
             }
         });
+    }
 
-
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }

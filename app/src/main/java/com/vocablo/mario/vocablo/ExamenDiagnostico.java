@@ -36,4 +36,10 @@ public class ExamenDiagnostico extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }

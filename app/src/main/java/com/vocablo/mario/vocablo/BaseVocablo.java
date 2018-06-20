@@ -36,6 +36,7 @@ public class BaseVocablo extends SQLiteOpenHelper {
         db.execSQL("Create table Alumno(" +
                 "MembresiaAlumno TEXT not null Constraint PK_numMembreAlumno Primary Key, " +
                 "Nombre TEXT not null," +
+                "Password TEXT not null," +
                 "apellidoPaterno TEXT not null, " +
                 "apellidoMaterno TEXT not null," +
                 "Telefono TEXT Constraint DF_telefonoAlumno Default '00-000-00-00000', " +
@@ -55,6 +56,7 @@ public class BaseVocablo extends SQLiteOpenHelper {
 
         db.execSQL("Create table Maestro( " +
                 "NumeroCuenta TEXT not null Constraint PK_numeroCuentaMaestro Primary Key,"+
+                "Password TEXT not null," +
                 "ClaveVocablo INTEGER not null,"+
                 "RFC TEXT not null Constraint UK_RFCMaestro unique Constraint CK_rfcMaestro Check (RFC like('[A-Z][A-Z][A-Z][A-Z]-[0-9][0-9][0-9][0-9][0-9][0-9]')),"+
                 "Nombre TEXT not null, "+
@@ -118,6 +120,7 @@ public class BaseVocablo extends SQLiteOpenHelper {
 
         db.execSQL("Create Table Administrativo (" +
                 "membresiaAdministrativo TEXT not null Constraint PK_membresiaAdministrativo Primary Key," +
+                "Password TEXT not null," +
                 "claveVocablo INTEGER not null," +
                 "RFC TEXT not null Constraint UK_RFCAdministrativo Unique Constraint CK_rfcAdministrativo Check (RFC like('[A-Z][A-Z][A-Z][A-Z]-[0-9][0-9][0-9][0-9][0-9][0-9]'))," +
                 "Nombre TEXT not null," +
@@ -166,7 +169,7 @@ public class BaseVocablo extends SQLiteOpenHelper {
     }
 
     //Método que permite insertar registros en la tabla alumno
-    public void insertarAlumno(String membresia, String voc, String nombre, String apePat, String apeMat, String tel, String correo, String domicilio, String FecNac, String Genero, String ingles) {
+    public void insertarAlumno(String membresia, String pas, String voc, String nombre, String apePat, String apeMat, String tel, String correo, String domicilio, String FecNac, String Genero, String ingles) {
         //Obtiene la fecha del sistema
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
         Date date = new Date();
@@ -177,6 +180,7 @@ public class BaseVocablo extends SQLiteOpenHelper {
         ContentValues Alumno = new ContentValues();
         //Inserción de los datos al contenedor
         Alumno.put("MembresiaAlumno", membresia);
+        Alumno.put("Password", pas);
         Alumno.put("Nombre", nombre);
         Alumno.put("apellidoPaterno", apePat);
         Alumno.put("apellidoMaterno", apeMat);
@@ -202,7 +206,7 @@ public class BaseVocablo extends SQLiteOpenHelper {
     }
 
     //Método que permite insertar registros en la tabla Administrador
-    public void  insertarAdmin (String mem, String gen, int voc, String rfc, String nom, String apP, String apM, String FecNac, String tel, String cor){
+    public void  insertarAdmin (String mem, String pas, String gen, int voc, String rfc, String nom, String apP, String apM, String FecNac, String tel, String cor){
         //Obtiene la fecha del sistema
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
         Date date = new Date();
@@ -213,6 +217,7 @@ public class BaseVocablo extends SQLiteOpenHelper {
         ContentValues Admin = new ContentValues();
         //Inserción de los datos al contenedor
         Admin.put("membresiaAdministrativo", mem);
+        Admin.put("Password", pas);
         Admin.put("claveVocablo", voc);
         Admin.put("RFC", rfc);
         Admin.put("Nombre", nom);
@@ -229,7 +234,7 @@ public class BaseVocablo extends SQLiteOpenHelper {
     }
 
     //Método que permite insertar un nuevo profesor
-    public void insertarMaestro (String mem, String nivel, String numC, String car, String gen, String voc, String rfc, String nom, String apP, String apM, String FecNac, String tel, String cor){
+    public void insertarMaestro (String mem, String pas, String nivel, String numC, String car, String gen, String voc, String rfc, String nom, String apP, String apM, String FecNac, String tel, String cor){
         //Obtiene la fecha del sistema
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
         Date date = new Date();
@@ -240,6 +245,7 @@ public class BaseVocablo extends SQLiteOpenHelper {
         ContentValues Maestro = new ContentValues();
         //Inserción de los datos al contenedor
         Maestro.put("NumeroCuenta", mem);
+        Maestro.put("Password", pas);
         Maestro.put("ClaveVocablo", voc);
         Maestro.put("RFC", rfc);
         Maestro.put("Nombre", nom);
@@ -345,5 +351,9 @@ public class BaseVocablo extends SQLiteOpenHelper {
         evalu.put("claveDocente", doc);
         //Inserción a la tabla Evaluacion
         this.getWritableDatabase().insert("Evaluacion", null, evalu);
+    }
+
+    public void existenciaMembresía (String membresia){
+
     }
 }

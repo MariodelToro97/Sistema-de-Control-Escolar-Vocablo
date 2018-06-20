@@ -59,7 +59,10 @@
         <activity
             android:name=".InterfazCitasAgendadas"
             android:screenOrientation="portrait" />
-        <activity android:name=".Critica"></activity>
+        <activity android:name=".Critica" />
+        <activity android:name=".EvaluarAlumno" />
+        <activity android:name=".RevisarTutorados" />
+        <activity android:name=".VerCitas"></activity>
     </application>
 
 </manifest>

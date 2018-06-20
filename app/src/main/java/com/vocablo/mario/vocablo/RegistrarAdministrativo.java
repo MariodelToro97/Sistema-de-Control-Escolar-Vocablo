@@ -27,4 +27,10 @@ public class RegistrarAdministrativo extends AppCompatActivity {
 
         getSupportActionBar().hide(); //Oculta la barra superior de la pantalla
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }

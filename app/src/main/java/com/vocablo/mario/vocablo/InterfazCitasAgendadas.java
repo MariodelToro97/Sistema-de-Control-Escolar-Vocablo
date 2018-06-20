@@ -24,4 +24,10 @@ public class InterfazCitasAgendadas extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }

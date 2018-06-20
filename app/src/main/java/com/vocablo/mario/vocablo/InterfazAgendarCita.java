@@ -92,4 +92,10 @@ public class InterfazAgendarCita extends AppCompatActivity implements View.OnCli
         },dia, mes, ano);
         datePickerDialog.show();
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }

@@ -37,6 +37,8 @@ public class RegistrarAlumno extends AppCompatActivity {
         //Creación del objeto del tipo de la clase de la base de datos para mandarlo a llamar cuando se inserta el dato
         BaseVocablo BD = new BaseVocablo(this, null, null, 1);
 
+        getSupportActionBar().hide(); //Oculta la barra superior de la pantalla
+
         //Asignación de los botones a las variables
         cancelar = (Button)findViewById(R.id.button2); //Botón Cacelar
         Registrar = (Button) findViewById(R.id.button6); //Botón Registrar
@@ -120,8 +122,11 @@ public class RegistrarAlumno extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) { //Entra si no se escoge nada
             }
         });
+    }
 
-        getSupportActionBar().hide(); //Oculta la barra superior de la pantalla
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }
