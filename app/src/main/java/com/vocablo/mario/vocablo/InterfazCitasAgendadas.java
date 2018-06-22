@@ -28,6 +28,7 @@ public class InterfazCitasAgendadas extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        finish();
+        startActivity(new Intent(InterfazCitasAgendadas.this,InterfazAlumno.class)); //Encargado de lanzar la otra actividad desde aqui
+        finish(); //Cierra la activity completamente
     }
 }

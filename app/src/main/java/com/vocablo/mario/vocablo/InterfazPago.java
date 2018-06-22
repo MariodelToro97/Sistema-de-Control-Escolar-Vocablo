@@ -43,6 +43,7 @@ public class InterfazPago extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        finish();
+        startActivity(new Intent(InterfazPago.this,InterfazAlumno.class)); //Despliegue de la pantalla a mostrar
+        finish(); //Cierra la interfaz completamente
     }
 }

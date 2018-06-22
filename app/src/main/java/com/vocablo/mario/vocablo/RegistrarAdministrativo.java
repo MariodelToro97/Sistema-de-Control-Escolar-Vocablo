@@ -31,6 +31,7 @@ public class RegistrarAdministrativo extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        finish();
+        startActivity(new Intent(RegistrarAdministrativo.this, InterfazAdmin.class)); //Encargado de lanzar la otra actividad desde aqui
+        finish();//Cierra la activity completamente
     }
 }

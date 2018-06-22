@@ -50,8 +50,8 @@ public class Login extends AppCompatActivity {
         IniciarAdmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { //Entra cuando se presiona la tecla de iniciar sesión
-                if (Membresia.getText().equals("") || Contra.getText().equals("")){
-                    Toast.makeText(getApplicationContext(), "Ingresar los dos campos", Toast.LENGTH_LONG);
+                if (Membresia.getText().length() == 0 || Contra.getText().length() == 0){
+                    Toast.makeText(getApplicationContext(), "Ingresar los dos campos", Toast.LENGTH_LONG).show();
                 } else {
                     if (Usuario.getSelectedItem().toString().equalsIgnoreCase("Estudiante")){
                         startActivity(new Intent(Login.this, InterfazAlumno.class)); //Encargado de lanzar la otra actividad desde aqui
@@ -72,21 +72,6 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
-
-        //código para ocultar la barra de navegación del celular
-        View decorView = getWindow().getDecorView();
-        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_FULLSCREEN;
-        decorView.setSystemUiVisibility(uiOptions);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        //código para ocultar la barra de navegación del celular
-        View decorView = getWindow().getDecorView();
-        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_FULLSCREEN;
-        decorView.setSystemUiVisibility(uiOptions);
     }
 
     @Override

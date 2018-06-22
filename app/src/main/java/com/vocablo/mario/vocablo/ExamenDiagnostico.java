@@ -40,6 +40,8 @@ public class ExamenDiagnostico extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        finish();
+        //Se ejecuta al presionar la tecla de Regresar
+        startActivity(new Intent(ExamenDiagnostico.this, Login.class)); //Despliegue de la pantalla a mostrar
+        finish();//Cierra la activity completamente
     }
 }

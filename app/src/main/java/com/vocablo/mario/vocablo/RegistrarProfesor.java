@@ -93,6 +93,8 @@ public class RegistrarProfesor extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        finish();
+        //Entra si se presiona el botón de cancelar
+        startActivity(new Intent(RegistrarProfesor.this, InterfazAdmin.class));//Encargado de lanzar la otra actividad desde aqui
+        finish();//Cierra la activity completamente
     }
 }

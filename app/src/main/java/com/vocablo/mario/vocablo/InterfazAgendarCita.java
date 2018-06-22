@@ -13,11 +13,9 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.Switch;
+import android.widget.Toast;
 
-import java.sql.DataTruncation;
-import java.sql.Date;
-import java.text.DateFormat;
-import java.time.Year;
 import java.util.Calendar;
 
 public class InterfazAgendarCita extends AppCompatActivity implements View.OnClickListener {
@@ -26,7 +24,7 @@ public class InterfazAgendarCita extends AppCompatActivity implements View.OnCli
     Button Cita;
     Spinner Horarios; //Declración de los horarios
     ImageButton Calendario; //imagen Calendario
-    private int dia, mes, ano;
+    private int dia, mes, ano, dias;
     EditText tfecha;
 
     @Override
@@ -44,9 +42,6 @@ public class InterfazAgendarCita extends AppCompatActivity implements View.OnCli
         Calendario.setOnClickListener(this);
 
         Horarios = (Spinner) findViewById(R.id.spinner); //Asignación del Spinner a la variable
-        ArrayAdapter <CharSequence> spinner_Adapter = ArrayAdapter.createFromResource(this, R.array.HorariosSemana, android.R.layout.simple_spinner_item); //Creación del objeto array con los horarios
-
-        Horarios.setAdapter(spinner_Adapter); //Asignación de los horarios al spinner
 
         final AlertDialog.Builder alert= new AlertDialog.Builder(this); //Declaración del tipo de objeto de AlertDialog para mostrar
 
@@ -79,15 +74,42 @@ public class InterfazAgendarCita extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View v) {
-        final Calendar c= Calendar.getInstance();
+        final Calendar c = Calendar.getInstance();
         dia=c.get(Calendar.DAY_OF_MONTH);
         mes=c.get(Calendar.MONTH);
         ano=c.get(Calendar.YEAR);
 
+        final ArrayAdapter <CharSequence> spinner_AdapterS = ArrayAdapter.createFromResource(this, R.array.HorarioSabado, android.R.layout.simple_spinner_item); //Creación del objeto array con los horarios
+        final ArrayAdapter <CharSequence> spinner_Adapter = ArrayAdapter.createFromResource(this, R.array.HorariosSemana, android.R.layout.simple_spinner_item); //Creación del objeto array con los horarios
+        final ArrayAdapter <CharSequence> spinner_AdapterD = ArrayAdapter.createFromResource(this, R.array.Domingo, android.R.layout.simple_spinner_item); //Creación del objeto array con los horarios
+
         DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                tfecha.setText(dayOfMonth+"/"+month+"/"+year);
+                c.set(year, month, dayOfMonth);
+
+                dias=c.get(Calendar.DAY_OF_WEEK);
+                String day = "";
+                switch (dias){
+                    case 1: day = "D";
+                        break;
+                    case 7: day = "S";
+                        break;
+                }
+
+                if (day.equalsIgnoreCase("S")) {
+                    Horarios.setAdapter(spinner_AdapterS); //Asignación de los horarios al spinner
+                    tfecha.setText(dayOfMonth+"/"+month+"/"+year);
+                } else {
+                    if (day.equalsIgnoreCase("D")){
+                        Horarios.setAdapter(spinner_AdapterD); //Asignación de los horarios al spinner
+                        tfecha.setText("");
+                        Toast.makeText(getApplicationContext(), "No existen clases los domingos", Toast.LENGTH_LONG).show();
+                    } else {
+                        Horarios.setAdapter(spinner_Adapter); //Asignación de los horarios al spinner
+                        tfecha.setText(dayOfMonth+"/"+month+"/"+year);
+                    }
+                }
             }
         },dia, mes, ano);
         datePickerDialog.show();
@@ -96,6 +118,8 @@ public class InterfazAgendarCita extends AppCompatActivity implements View.OnCli
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        finish();
+        //Entra si se presiona el botón de Regresar
+        startActivity(new Intent(InterfazAgendarCita.this,InterfazAlumno.class)); //Encargado de lanzar la otra actividad desde aqui
+        finish();//Cierra la activity completamente
     }
 }
